@@ -39,16 +39,22 @@ try:
 	Emotion = Labels[val]
 
 	if button:
+		text = ""
 		if not(Emotion):
 			st.warning("Please let me capture your emotion properly")
 		else:
 			if Language == "None" and Singer == "None":
-			  print("Open the Link and Enjoy the Song : " + f"https://www.youtube.com/results?search_query={Emotion}+songs")#Always Use Formatted String.
+				text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Emotion) + "songs"
+				st.text(text)
 			elif Language == "None":
-				print("Open the Link and Enjoy the Song : " + f"https://www.youtube.com/results?search_query={Singer}+{Emotion}+songs")
+				text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Singer) + str(Emotion) + "songs"
+				st.text(text)
 			elif Singer == "None":
-				print("Open the Link and Enjoy the Song : " + f"https://www.youtube.com/results?search_query={Language}+{Emotion}+songs")
+				text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Language) + str(Emotion) + "songs"
+				st.text(text)
 			else:
-				print("Open the Link and Enjoy the Song : " + f"https://www.youtube.com/results?search_query={Language}+{Singer}+{Emotion}+songs")
+				text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Language) + str(Singer) + str(Emotion) + "songs"
+				st.text(text)
+
 except:
 	print("Please choose the image first!")
