@@ -1,4 +1,4 @@
 streamlit==0.70.0
-numpy==1.18.5
+numpy==1.9.1
 Keras==2.4.3
 tensorflow==2.5.3
