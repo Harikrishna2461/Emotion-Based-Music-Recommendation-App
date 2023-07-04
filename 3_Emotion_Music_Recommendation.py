@@ -43,18 +43,21 @@ try:
 			st.warning("Please let me capture your emotion properly")
 		else:
 			if Language == "None" and Singer == "None":
-				link = "https://www.youtube.com/results?search_query=" + str(Emotion) + "songs"
-				st.write("Click the link to listen to the song [link](link)")
+				link_1 = "Click the link to listen to the song [link](f"https://www.youtube.com/results?search_query=+{Emotion}+songs")"
+				#st.write("Click the link to listen to the song [link](link)")
+				st.markdown(link_1,unsafe_allow_html=True)
 			elif Language == "None":
-				link = "https://www.youtube.com/results?search_query=" + str(Singer) + str(Emotion) + "songs"
-				st.write("Click the link to listen to the song [link](link)")
+				link_1 = "Click the link to listen to the song [link](f"https://www.youtube.com/results?search_query={Singer}+{Emotion}+songs")"
+				#st.write("Click the link to listen to the song [link](link)")
+        st.markdown(link_1,unsafe_allow_html=True)			
 			elif Singer == "None":
-				link = "https://www.youtube.com/results?search_query=" + str(Language) + str(Emotion) + "songs"
-				st.write("Click the link to listen to the song [link](link)")
+				link1 = "Click the link to listen to the song [link](f"https://www.youtube.com/results?search_query=+{Language}+{Emotion}+songs")"
+				#st.write("Click the link to listen to the song [link](link)")
+			  st.markdown(link_1,unsafe_allow_html=True)
 			else:
-				link = "https://www.youtube.com/results?search_query=" + str(Language) + str(Singer) + str(Emotion) + "songs"
-				st.write("Click the link to listen to the song [link](link)")
-				
+				link = "Click the link to listen to the song [link](f"https://www.youtube.com/results?search_query=+{Language}+{Singer}+{Emotion}+songs")"
+				#st.write("Click the link to listen to the song [link](link)")
+				st.markdown(link_1,unsafe_allow_html=True)
 
 except:
 	print("Please choose the image first!")
