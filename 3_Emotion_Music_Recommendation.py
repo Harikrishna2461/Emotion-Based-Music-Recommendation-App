@@ -31,6 +31,41 @@ def load_image_and_predict(image_data,Model):
 
 button = st.button("Recommend me some songs according to my mood")
 
+#try:
+#	Uploaded_Image = Image.open(User_Image)
+#	st.image(Uploaded_Image,use_column_width=True)
+#	val = load_image_and_predict(Uploaded_Image,CNN_Model)
+#	Emotion = Labels[val]
+#
+#	if button:
+#		link_1 = ""
+#		if not(Emotion):
+#			st.warning("Please let me capture your emotion properly")
+#		else:
+#			if Language == "None" and Singer == "None":
+#				link_1 = f"https://www.youtube.com/results?search_query=+{Emotion}+songs"
+#				st.write("Click the link to listen to the song [link](link_1)")
+#				#st.markdown(link_1,unsafe_allow_html=True)
+#				#text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Emotion) + "songs"
+#				#st.text(text)
+#			elif Language == "None":
+#				link_1 =f"https://www.youtube.com/results?search_query={Singer}+{Emotion}+songs"
+#       #st.markdown(link_1,unsafe_allow_html=True)		
+#        #text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Singer) + str(Emotion) + "songs"
+#        #st.text(text)	
+#			elif Singer == "None":
+#				link_1 = f"https://www.youtube.com/results?search_query=+{Language}+{Emotion}+songs"
+#				st.write("Click the link to listen to the song [link](link_1)")
+#			  #st.markdown(link_1,unsafe_allow_html=True)
+#			  #text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Language) + str(Emotion) + "songs"
+#			  #st.text(text)
+#			else:
+#				link_1 = f"https://www.youtube.com/results?search_query=+{Language}+{Singer}+{Emotion}+songs"
+#				st.write("Click the link to listen to the song [link](link_1)")
+#				#st.markdown(link_1,unsafe_allow_html=True)
+#				#text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Language) + str(Singer) + str(Emotion) + "songs"
+#				#st.text(text)
+
 try:
 	Uploaded_Image = Image.open(User_Image)
 	st.image(Uploaded_Image,use_column_width=True)
@@ -38,34 +73,22 @@ try:
 	Emotion = Labels[val]
 
 	if button:
-		link_1 = ""
+		text = ""
 		if not(Emotion):
 			st.warning("Please let me capture your emotion properly")
 		else:
 			if Language == "None" and Singer == "None":
-				link_1 = f"https://www.youtube.com/results?search_query=+{Emotion}+songs"
-				st.write("Click the link to listen to the song [link](link_1)")
-				#st.markdown(link_1,unsafe_allow_html=True)
-				#text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Emotion) + "songs"
-				#st.text(text)
+				text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Emotion) + "songs"
+				st.text(text)
 			elif Language == "None":
-				link_1 =f"https://www.youtube.com/results?search_query={Singer}+{Emotion}+songs"
-				st.write("Click the link to listen to the song [link](link_1)")
-        #st.markdown(link_1,unsafe_allow_html=True)		
-        #text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Singer) + str(Emotion) + "songs"
-        #st.text(text)	
+				text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Singer) + str(Emotion) + "songs"
+				st.text(text)
 			elif Singer == "None":
-				link_1 = f"https://www.youtube.com/results?search_query=+{Language}+{Emotion}+songs"
-				st.write("Click the link to listen to the song [link](link_1)")
-			  #st.markdown(link_1,unsafe_allow_html=True)
-			  #text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Language) + str(Emotion) + "songs"
-			  #st.text(text)
+				text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Language) + str(Emotion) + "songs"
+				st.text(text)
 			else:
-				link_1 = f"https://www.youtube.com/results?search_query=+{Language}+{Singer}+{Emotion}+songs"
-				st.write("Click the link to listen to the song [link](link_1)")
-				#st.markdown(link_1,unsafe_allow_html=True)
-				#text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Language) + str(Singer) + str(Emotion) + "songs"
-				#st.text(text)
+				text = "Open the Link and Enjoy the Song : " + "https://www.youtube.com/results?search_query=" + str(Language) + str(Singer) + str(Emotion) + "songs"
+				st.text(text)
 
 except:
 	print("Please choose the image first!")
